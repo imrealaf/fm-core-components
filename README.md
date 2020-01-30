@@ -9,8 +9,8 @@
 
 ### Hooks
 
-- `useToggle()`
+`useToggle()`
 
 ### Utilities
 
-- `onTransitionEnd()`
+`onTransitionEnd(ref, callback)`
