@@ -2,11 +2,15 @@
 
 ### Components
 
-- Overlay
-- Sliding Panel
-- Burger
-- Close Btn
+`Overlay`
+`SlidingPanel`
+`Burger`
+`CloseBtn`
 
 ### Hooks
 
-- useToggle
+- `useToggle()`
+
+### Utilities
+
+- `onTransitionEnd()`
