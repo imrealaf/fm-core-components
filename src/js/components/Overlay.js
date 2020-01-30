@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import { setOpacity } from '../utils';
+import { setOpacity, defer } from '../utils';
 
 const compName = 'overlay';
 
@@ -27,9 +27,9 @@ const Overlay = ({ variant, active, opacity, onClick }) => {
   });
 
   const show = () => {
-    setTimeout(() => {
+    defer(() => {
       setOpacity(ref, opacity);
-    }, 50);
+    });
   };
 
   const hide = () => {

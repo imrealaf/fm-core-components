@@ -1,15 +1,15 @@
-import React, { Fragment, useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useSwipeable } from 'react-swipeable';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import { CLASSES } from '../constants';
+import { DOM_STATE } from '../constants';
 import {
   onTransitionEnd,
-  setDisplay,
   hasClass,
   addClass,
-  removeClass
+  removeClass,
+  defer
 } from '../utils';
 
 import Header from './SlidingPanelHeader';
@@ -181,22 +181,22 @@ const SlidingPanel = ({
    *  @type method
    */
   const show = () => {
-    if (hasClass(ref, CLASSES.active)) return;
+    if (hasClass(ref, DOM_STATE.SHOW)) return;
 
-    // Show overlay & set display of element
-    setDisplay(ref, true, 'flex');
+    // Set active class
+    addClass(ref, DOM_STATE.ACTIVE);
 
     // Trigger on show
     if (onShow) onShow();
 
     // Trigger transition in ..
-    setTimeout(() => {
+    defer(() => {
       setShowOverlay(true);
-      addClass(ref, CLASSES.active);
-    });
+      addClass(ref, DOM_STATE.SHOW);
+    }, 0);
 
     // Trigger on shown when transition ends
-    onTransitionEnd(ref.current, () => {
+    onTransitionEnd(ref, () => {
       if (onShown) onShown();
     });
   };
@@ -206,18 +206,18 @@ const SlidingPanel = ({
    *  @type method
    */
   const hide = () => {
-    if (!hasClass(ref, CLASSES.active)) return;
+    if (!hasClass(ref, DOM_STATE.SHOW)) return;
 
     // Trigger transition out
-    removeClass(ref, CLASSES.active);
+    removeClass(ref, DOM_STATE.SHOW);
 
     // Trigger on hide
     if (onHide) onHide();
 
     // When fully transitoned out ..
-    onTransitionEnd(ref.current, () => {
+    onTransitionEnd(ref, () => {
       // Hide overlay & display of element
-      setDisplay(ref, false);
+      removeClass(ref, DOM_STATE.ACTIVE);
       setShowOverlay(false);
 
       // Trigger on hidden

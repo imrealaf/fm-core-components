@@ -47,6 +47,10 @@
     }
   }
 
+  &.active {
+    display: flex;
+  }
+
   &.show {
     transform: translateX(0);
 

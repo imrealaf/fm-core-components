@@ -1,3 +1,1 @@
-export const CLASSES = {
-  active: 'show'
-};
+export const DOM_STATE = { ACTIVE: 'active', SHOW: 'show' };
