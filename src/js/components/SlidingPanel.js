@@ -30,16 +30,14 @@ const propTypes = {
   /**
    *  pos
    *  @type string
-   *  @values left, right
    */
-  pos: PropTypes.string,
+  pos: PropTypes.oneOf(['left', 'right']),
 
   /**
    *  variant
    *  @type string
-   *  @values light, dark
    */
-  variant: PropTypes.string,
+  variant: PropTypes.oneOf(['light', 'dark']),
 
   /**
    *  active
@@ -62,7 +60,6 @@ const propTypes = {
   /**
    *  overlayOpacity
    *  @type number (float)
-   *  @values 0.0 - 1.0
    */
   overlayOpacity: PropTypes.number,
 
@@ -234,7 +231,7 @@ const SlidingPanel = ({
         {closeBtn ? (
           <CloseBtn
             pos='abs'
-            posAlign='right'
+            posAlign={pos === 'right' ? 'left' : 'right'}
             onClick={toggle ? toggle : null}
           />
         ) : null}

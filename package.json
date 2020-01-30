@@ -6,7 +6,7 @@
   "types": "types/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --open --mode development",
+    "start": "webpack-dev-server --open --host 0.0.0.0 --port 3000 --mode development",
     "build": "webpack --mode production"
   },
   "repository": {

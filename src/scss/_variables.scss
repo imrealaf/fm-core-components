@@ -74,7 +74,7 @@ $overlay-trans-duration: $transition-duration;
  *  Close btn
 */
 $close-btn-size: $gutter;
-$close-btn-thickness: 3px;
+$close-btn-thickness: 2px;
 
 /**
  *  Sliding Panel
@@ -88,3 +88,20 @@ $sliding-panel-offsets: (
   'left': -$sliding-panel-width,
   'right': $sliding-panel-width
 );
+
+/**
+ *  Burger
+*/
+$burger-padding-x: $gutter/2;
+$burger-padding-y: $gutter/2;
+$burger-layer-width: $gutter;
+$burger-layer-height: 2px;
+$burger-layer-spacing: 7px;
+$burger-layer-color: $accent;
+$burger-layer-border-radius: 0;
+$burger-hover-opacity: 1;
+$burger-active-layer-color: $burger-layer-color;
+$burger-active-hover-opacity: $burger-hover-opacity;
+$burger-hover-use-filter: false;
+$burger-hover-filter: opacity(50%);
+$burger-active-hover-filter: $burger-hover-filter;

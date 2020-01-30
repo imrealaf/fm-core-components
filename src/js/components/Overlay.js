@@ -7,7 +7,7 @@ import { setOpacity, defer } from '../utils';
 const compName = 'overlay';
 
 const propTypes = {
-  variant: PropTypes.string,
+  variant: PropTypes.oneOf(['light', 'dark']),
   active: PropTypes.bool,
   opacity: PropTypes.number
 };

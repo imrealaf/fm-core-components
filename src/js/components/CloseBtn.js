@@ -5,10 +5,10 @@ import classNames from 'classnames';
 const compName = 'close-btn';
 
 const propTypes = {
-  size: PropTypes.string,
-  variant: PropTypes.string,
-  pos: PropTypes.string,
-  posAlign: PropTypes.string
+  size: PropTypes.oneOf(['sm', 'lg']),
+  variant: PropTypes.oneOf(['light', 'dark']),
+  pos: PropTypes.oneOf(['rel', 'abs', 'fxd']),
+  posAlign: PropTypes.oneOf(['left', 'right'])
 };
 
 const defaultProps = {

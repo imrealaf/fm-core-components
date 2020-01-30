@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import { useToggle } from '../../src/js/hooks';
 import { SlidingPanel } from '../../src/js/components';
+import { Burger } from '../../src/js/components';
 
 const Nav = () => {
   const panel = useToggle();
@@ -9,9 +10,11 @@ const Nav = () => {
   return (
     <Fragment>
       <nav className='navbar navbar-light bg-light'>
+        <Burger active={panel.active} onClick={panel.toggle} />
         <Link className='navbar-brand' to='/'>
           <strong>FM</strong> Core Components
         </Link>
+
         <button className='navbar-toggler' type='button' onClick={panel.toggle}>
           <span className='navbar-toggler-icon'></span>
         </button>
