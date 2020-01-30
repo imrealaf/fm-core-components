@@ -1,0 +1,82 @@
+/**
+ *  Global
+*/
+$gutter: 30px;
+
+/**
+ *  Transitions
+*/
+$transition-duration: 0.3s;
+$transition-timing: ease;
+
+/**
+ *  Neutrals
+*/
+
+$black: #000;
+$white: #fff;
+
+/**
+ *  Grays
+*/
+$gray-lightest: #eee;
+$gray-light: #ccc;
+$gray-med: #555;
+$gray-dark: #333;
+$gray-darkest: #111;
+
+/**
+ *  Variants
+*/
+
+$variant-light-bg: $gray-lightest;
+$variant-light-color: $gray-darkest;
+
+$variant-dark-bg: $gray-darkest;
+$variant-dark-color: $gray-lightest;
+
+$variants: ('light', 'dark');
+
+$variant-bg: (
+  'light': $variant-light-bg,
+  'dark': $variant-dark-bg
+);
+
+$variant-overlay-bg: (
+  'light': $black,
+  'dark': $black
+);
+
+$variant-color: (
+  'light': $variant-light-color,
+  'dark': $variant-dark-color
+);
+
+$variant-shadow-opacity: (
+  'light': 0.2,
+  'dark': 0.3
+);
+
+/**
+ *  Z-index
+*/
+$zindex-offcanvas: 1050;
+$zindex-overlay: $zindex-offcanvas - 1;
+
+/**
+ *  Overlay
+*/
+$overlay-trans-duration: $transition-duration;
+
+/**
+ *  Sliding Panel
+*/
+$slidingpanel-trans-duration: $transition-duration;
+$slidingpanel-shadow: 0 0 $gutter;
+$sliding-panel-padding: $gutter;
+$sliding-panel-width: 300px;
+$sliding-panel-positions: ('left', 'right');
+$sliding-panel-offsets: (
+  'left': -$sliding-panel-width,
+  'right': $sliding-panel-width
+);
