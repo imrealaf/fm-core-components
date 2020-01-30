@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
+
+import * as types from './propTypes';
 
 /**
  *
@@ -17,27 +18,27 @@ const compName = 'close-btn';
 const propTypes = {
   /**
    *  size
-   *  @type string
+   *  @type string - xs, sm, lg, xl
    */
-  size: PropTypes.oneOf(['sm', 'lg']),
+  size: types.SizePropType,
 
   /**
    *  variant
-   *  @type string
+   *  @type string - light, dark
    */
-  variant: PropTypes.oneOf(['light', 'dark']),
+  variant: types.VariantPropType,
 
   /**
    *  pos
-   *  @type string
+   *  @type string - rel, abs, fxd
    */
-  pos: PropTypes.oneOf(['rel', 'abs', 'fxd']),
+  pos: types.CSSPositionPropType,
 
   /**
    *  posAlign
-   *  @type string
+   *  @type string - left, right
    */
-  posAlign: PropTypes.oneOf(['left', 'right'])
+  posAlign: types.AlignmentPropType
 };
 
 /**

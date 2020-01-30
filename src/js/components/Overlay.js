@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+import * as types from './propTypes';
 import { setOpacity, defer } from '../utils';
 
 /**
@@ -21,7 +22,7 @@ const propTypes = {
    *  variant
    *  @type string
    */
-  variant: PropTypes.oneOf(['light', 'dark']),
+  variant: types.VariantPropType,
 
   /**
    *  active

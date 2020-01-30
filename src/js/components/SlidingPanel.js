@@ -3,6 +3,7 @@ import { useSwipeable } from 'react-swipeable';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+import * as types from './propTypes';
 import { DOM_STATE } from '../constants';
 import {
   onTransitionEnd,
@@ -31,13 +32,13 @@ const propTypes = {
    *  pos
    *  @type string
    */
-  pos: PropTypes.oneOf(['left', 'right']),
+  pos: types.PositionPropType,
 
   /**
    *  variant
    *  @type string
    */
-  variant: PropTypes.oneOf(['light', 'dark']),
+  variant: types.VariantPropType,
 
   /**
    *  active
