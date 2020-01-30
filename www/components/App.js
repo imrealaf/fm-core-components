@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import SlidingPanel from '../../src/js/SlidingPanel';
+import { SlidingPanel } from '../../src/js/components';
 
 const App = () => {
   const [show, setShow] = useState(false);

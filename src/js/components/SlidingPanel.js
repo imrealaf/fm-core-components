@@ -2,14 +2,14 @@ import React, { Fragment, useEffect, useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import { CLASSES } from './constants';
+import { CLASSES } from '../constants';
 import {
   onTransitionEnd,
   setDisplay,
   hasClass,
   addClass,
   removeClass
-} from './utils';
+} from '../utils';
 
 import Header from './SlidingPanelHeader';
 import Body from './SlidingPanelBody';

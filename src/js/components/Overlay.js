@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import { setOpacity } from './utils';
+import { setOpacity } from '../utils';
 
 const compName = 'overlay';
 
