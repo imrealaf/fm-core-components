@@ -2,11 +2,12 @@
  *  Global
 */
 $gutter: 30px;
+$accent: #f5284f;
 
 /**
  *  Transitions
 */
-$transition-duration: 0.3s;
+$transition-duration: 0.25s;
 $transition-timing: ease;
 
 /**
@@ -23,6 +24,7 @@ $gray-lightest: #eee;
 $gray-light: #ccc;
 $gray-med: #555;
 $gray-dark: #333;
+$gray-darker: #222;
 $gray-darkest: #111;
 
 /**
@@ -32,7 +34,7 @@ $gray-darkest: #111;
 $variant-light-bg: $gray-lightest;
 $variant-light-color: $gray-darkest;
 
-$variant-dark-bg: $gray-darkest;
+$variant-dark-bg: $gray-darker;
 $variant-dark-color: $gray-lightest;
 
 $variants: ('light', 'dark');
@@ -67,6 +69,12 @@ $zindex-overlay: $zindex-offcanvas - 1;
  *  Overlay
 */
 $overlay-trans-duration: $transition-duration;
+
+/**
+ *  Close btn
+*/
+$close-btn-size: $gutter;
+$close-btn-thickness: 3px;
 
 /**
  *  Sliding Panel

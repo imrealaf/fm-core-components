@@ -1,0 +1,62 @@
+.close-btn {
+  position: relative;
+  display: inline-block;
+  width: $close-btn-size;
+  height: $close-btn-size;
+  background: none;
+  border: 0;
+  line-height: 1;
+  opacity: 0.5;
+
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: $close-btn-thickness;
+    margin-bottom: ($close-btn-size/2) - ($close-btn-thickness/2);
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+
+  &.close-btn--abs {
+    position: absolute;
+  }
+
+  @each $variant in $variants {
+    &::before,
+    &::after {
+      background: map-get($variant-overlay-bg, $variant);
+    }
+  }
+
+  &.close-btn--abs {
+    position: absolute;
+  }
+
+  &.close-btn--fxd {
+    position: fixed;
+  }
+
+  &.close-btn--right,
+  &.close-btn--left {
+    top: $gutter/2;
+  }
+
+  &.close-btn--right {
+    right: $gutter/2;
+  }
+
+  &.close-btn--left {
+    left: $gutter/2;
+  }
+}

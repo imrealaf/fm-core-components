@@ -1,4 +1,5 @@
 import React, { Fragment, useEffect, useState, useRef } from 'react';
+import { useSwipeable } from 'react-swipeable';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
@@ -13,6 +14,8 @@ import {
 
 import Header from './SlidingPanelHeader';
 import Body from './SlidingPanelBody';
+
+import CloseBtn from './CloseBtn';
 import Overlay from './Overlay';
 
 /**
@@ -25,11 +28,11 @@ const compName = 'sliding-panel';
  */
 const propTypes = {
   /**
-   *  position
+   *  pos
    *  @type string
    *  @values left, right
    */
-  position: PropTypes.string,
+  pos: PropTypes.string,
 
   /**
    *  variant
@@ -109,8 +112,8 @@ const propTypes = {
  *  Default props
  */
 const defaultProps = {
-  position: 'left',
-  variant: 'light',
+  pos: 'left',
+  variant: 'dark',
   active: false,
   closeBtn: true,
   overlay: true,
@@ -121,7 +124,7 @@ const defaultProps = {
 const SlidingPanel = ({
   id,
   className,
-  position,
+  pos,
   variant,
   active,
   closeBtn,
@@ -142,9 +145,17 @@ const SlidingPanel = ({
     compName,
     className,
     `${compName}--${variant}`,
-    `${compName}--${position}`,
+    `${compName}--${pos}`,
     shadow ? `${compName}--shadow` : ''
   );
+
+  /**
+   *  Swipe handling
+   */
+  const swipeEvent = pos === 'left' ? 'onSwipedLeft' : 'onSwipedRight';
+  const swipeHandler = useSwipeable({
+    [swipeEvent]: () => toggle()
+  });
 
   /**
    *  Overlay state
@@ -173,14 +184,14 @@ const SlidingPanel = ({
     if (hasClass(ref, CLASSES.active)) return;
 
     // Show overlay & set display of element
-    setShowOverlay(true);
     setDisplay(ref, true, 'flex');
 
     // Trigger on show
     if (onShow) onShow();
 
-    // Trigger transition in
+    // Trigger transition in ..
     setTimeout(() => {
+      setShowOverlay(true);
       addClass(ref, CLASSES.active);
     });
 
@@ -218,15 +229,14 @@ const SlidingPanel = ({
    *  Render
    */
   return (
-    <Fragment>
-      <div id={id} className={initialClasses} ref={ref}>
+    <div id={id} className={`${compName}-wrapper`} {...swipeHandler}>
+      <div className={initialClasses} ref={ref}>
         {closeBtn ? (
-          <button
-            className={`${compName}__close`}
+          <CloseBtn
+            pos='abs'
+            posAlign='right'
             onClick={toggle ? toggle : null}
-          >
-            Close
-          </button>
+          />
         ) : null}
         {children}
       </div>
@@ -238,7 +248,7 @@ const SlidingPanel = ({
           onClick={toggle ? toggle : null}
         />
       ) : null}
-    </Fragment>
+    </div>
   );
 };
 

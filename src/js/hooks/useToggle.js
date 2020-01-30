@@ -1,34 +1,48 @@
 import { useState } from 'react';
 
+/**
+ *  useToggle
+ *  @type hook
+ *  @description handles visibilty state for a toggleable component
+ *  @return object - api
+ */
+
 export default () => {
   /**
-   *  Active state
+   *  active
+   *  @type boolean
+   *  @description the value of the current active state
    */
   const [active, setActive] = useState(false);
 
   /**
-   * Show method
+   *  show()
+   *  @type method
+   *  @description sets active state to true (transition in)
    */
   const show = () => setActive(true);
 
   /**
-   *  Hide method
+   *  hide()
+   *  @type method
+   *  @description sets active state to false (transition out)
    */
   const hide = () => setActive(false);
 
   /**
-   *  Toggle method
+   *  toggle()
+   *  @type method
+   *  @description switches between active state
    */
   const toggle = () => {
     !active ? show() : hide();
   };
 
   /**
-   *  Return api
+   *  return api
    */
   return {
     active,
-    setActive,
     show,
     hide,
     toggle

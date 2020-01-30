@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { Switch, Route } from 'react-router-dom';
 
 import { useToggle } from '../../src/js/hooks';
 import { SlidingPanel } from '../../src/js/components';
+
+import Nav from './Nav';
+import HomePage from './HomePage';
 
 const App = () => {
   const panel = useToggle();
@@ -14,32 +18,11 @@ const App = () => {
 
   return (
     <React.Fragment>
-      <nav>nav</nav>
+      <Nav />
       <main>
-        <SlidingPanel
-          id='my-panel'
-          className='my-class'
-          active={panel.active}
-          variant='dark'
-          toggle={panel.toggle}
-          onShow={() => {
-            console.log('panel Show');
-          }}
-          onShown={() => {
-            console.log('panel Shown');
-          }}
-          onHide={() => {
-            console.log('panel hide');
-          }}
-          onHidden={() => {
-            console.log('panel hidden');
-          }}
-        >
-          <SlidingPanel.Header>
-            This is a sliding panel Header
-          </SlidingPanel.Header>
-          <SlidingPanel.Body>This is a sliding panel body</SlidingPanel.Body>
-        </SlidingPanel>
+        <Switch>
+          <Route path='/' exact={true} component={HomePage} />
+        </Switch>
       </main>
     </React.Fragment>
   );

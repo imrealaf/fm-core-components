@@ -29,7 +29,7 @@ const Overlay = ({ variant, active, opacity, onClick }) => {
   const show = () => {
     setTimeout(() => {
       setOpacity(ref, opacity);
-    });
+    }, 50);
   };
 
   const hide = () => {
