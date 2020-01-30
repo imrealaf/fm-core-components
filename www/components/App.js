@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 
+import { useToggle } from '../../src/js/hooks';
 import { SlidingPanel } from '../../src/js/components';
 
 const App = () => {
-  const [show, setShow] = useState(false);
+  const panel = useToggle();
 
   useEffect(() => {
     setTimeout(() => {
-      setShow(true);
+      panel.show();
     }, 2000);
   }, []);
 
@@ -18,11 +19,9 @@ const App = () => {
         <SlidingPanel
           id='my-panel'
           className='my-class'
-          active={show}
+          active={panel.active}
           variant='dark'
-          toggle={() => {
-            setShow(false);
-          }}
+          toggle={panel.toggle}
           onShow={() => {
             console.log('panel Show');
           }}

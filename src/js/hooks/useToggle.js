@@ -2,39 +2,35 @@ import { useState } from 'react';
 
 export default () => {
   /**
-   *  Create state
+   *  Active state
    */
-  const [show, setShow] = useState(false);
+  const [active, setActive] = useState(false);
 
   /**
-   *  handle close method
+   * Show method
    */
-  const handleClose = () => setShow(false);
+  const show = () => setActive(true);
 
   /**
-   *  Handle show method
+   *  Hide method
    */
-  const handleShow = () => setShow(true);
+  const hide = () => setActive(false);
 
   /**
    *  Toggle method
    */
   const toggle = () => {
-    if (!show) {
-      handleShow();
-    } else {
-      handleClose();
-    }
+    !active ? show() : hide();
   };
 
   /**
    *  Return api
    */
   return {
+    active,
+    setActive,
     show,
-    setShow,
-    handleClose,
-    handleShow,
+    hide,
     toggle
   };
 };
