@@ -39,6 +39,32 @@
       background-color: $burger-active-layer-color;
     }
   }
+
+  &.burger--abs,
+  &.burger--fxd {
+    z-index: $zindex-offcanvas + 1;
+  }
+
+  &.burger--abs {
+    position: absolute;
+  }
+
+  &.burger--fxd {
+    position: fixed;
+  }
+
+  &.burger--right,
+  &.burger--left {
+    top: 3px;
+  }
+
+  &.burger--right {
+    right: $gutter/4;
+  }
+
+  &.burger--left {
+    left: $gutter/4;
+  }
 }
 
 .burger__box {

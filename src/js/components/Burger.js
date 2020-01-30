@@ -2,6 +2,8 @@ import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+import * as types from './propTypes';
+
 /**
  *
  *  Component name
@@ -25,7 +27,19 @@ const propTypes = {
    *  active
    *  @type boolean
    */
-  active: PropTypes.bool
+  active: PropTypes.bool,
+
+  /**
+   *  pos
+   *  @type string - rel, abs, fxd
+   */
+  pos: types.CSSPositionPropType,
+
+  /**
+   *  posAlign
+   *  @type string - left, right
+   */
+  posAlign: types.AlignmentPropType
 };
 
 /**
@@ -35,13 +49,16 @@ const propTypes = {
  */
 const defaultProps = {
   type: 'spin',
-  active: false
+  active: false,
+  pos: 'rel',
+  posAlign: 'right'
 };
 
-const Burger = ({ type, active, onClick }) => {
+const Burger = ({ type, active, pos, posAlign, onClick }) => {
   const initialClasses = classNames(
     compName,
     `${compName}--${type}`,
+    pos !== 'rel' ? `${compName}--${pos} ${compName}--${posAlign}` : '',
     active ? 'active' : ''
   );
   const ref = useRef();

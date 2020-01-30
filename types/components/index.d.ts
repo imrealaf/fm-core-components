@@ -1,1 +1,1 @@
-export { default as Test, TestProps } from './Test';
+export { default as SlidingPanel, SlidingPanelProps } from './SlidingPanel';

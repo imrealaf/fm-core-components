@@ -9,21 +9,18 @@ const Nav = () => {
 
   return (
     <Fragment>
+      <Burger pos='abs' active={panel.active} onClick={panel.toggle} />
       <nav className='navbar navbar-light bg-light'>
-        <Burger active={panel.active} onClick={panel.toggle} />
         <Link className='navbar-brand' to='/'>
           <strong>FM</strong> Core Components
         </Link>
-
-        <button className='navbar-toggler' type='button' onClick={panel.toggle}>
-          <span className='navbar-toggler-icon'></span>
-        </button>
       </nav>
       <SlidingPanel
         active={panel.active}
         toggle={panel.toggle}
         overlayOpacity={0}
         pos='right'
+        closeBtn={false}
       >
         <SlidingPanel.Body className='mt-5'>
           <ul className='nav flex-column'>
