@@ -4,14 +4,43 @@ import classNames from 'classnames';
 
 import { setOpacity, defer } from '../utils';
 
+/**
+ *
+ *  Comp name
+ *
+ */
 const compName = 'overlay';
 
+/**
+ *
+ *  Prop types
+ *
+ */
 const propTypes = {
+  /**
+   *  variant
+   *  @type string
+   */
   variant: PropTypes.oneOf(['light', 'dark']),
+
+  /**
+   *  active
+   *  @type boolean
+   */
   active: PropTypes.bool,
+
+  /**
+   *  opacity
+   *  @type number (float)
+   */
   opacity: PropTypes.number
 };
 
+/**
+ *
+ *  Default props
+ *
+ */
 const defaultProps = {
   variant: 'dark',
   active: false,
@@ -39,6 +68,11 @@ const Overlay = ({ variant, active, opacity, onClick }) => {
   return <div className={initialClasses} ref={ref} onClick={onClick} />;
 };
 
+/**
+ *
+ *  Assign values
+ *
+ */
 Overlay.propTypes = propTypes;
 Overlay.defaultProps = defaultProps;
 

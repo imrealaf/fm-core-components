@@ -1,10 +1,12 @@
 import { useState } from 'react';
 
 /**
+ *
  *  useToggle
  *  @type hook
  *  @description handles visibilty state for a toggleable component
  *  @return object - api
+ *
  */
 
 export default () => {

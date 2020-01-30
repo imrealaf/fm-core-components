@@ -2,13 +2,37 @@ import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+/**
+ *
+ *  Component name
+ *
+ */
 const compName = 'burger';
 
+/**
+ *
+ *  Prop types
+ *
+ */
 const propTypes = {
+  /**
+   *  type
+   *  @type string
+   */
   type: PropTypes.oneOf(['spin', 'collapse']),
+
+  /**
+   *  active
+   *  @type boolean
+   */
   active: PropTypes.bool
 };
 
+/**
+ *
+ *  Default props
+ *
+ */
 const defaultProps = {
   type: 'spin',
   active: false
@@ -31,6 +55,11 @@ const Burger = ({ type, active, onClick }) => {
   );
 };
 
+/**
+ *
+ *  Assign values
+ *
+ */
 Burger.propTypes = propTypes;
 Burger.defaultProps = defaultProps;
 
