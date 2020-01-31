@@ -55,16 +55,21 @@ const defaultProps = {
 };
 
 const Burger = ({ type, active, pos, posAlign, onClick }) => {
-  const initialClasses = classNames(
+  /**
+   *  Construct className string
+   */
+  const classes = classNames(
     compName,
     `${compName}--${type}`,
     pos !== 'rel' ? `${compName}--${pos} ${compName}--${posAlign}` : '',
     active ? 'active' : ''
   );
-  const ref = useRef();
 
+  /**
+   *  Render
+   */
   return (
-    <div className={initialClasses} ref={ref} onClick={onClick}>
+    <div className={classes} ref={ref} onClick={onClick}>
       <span className={`${compName}__box`}>
         <span className={`${compName}__inner`}></span>
       </span>

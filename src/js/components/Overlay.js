@@ -49,24 +49,44 @@ const defaultProps = {
 };
 
 const Overlay = ({ variant, active, opacity, onClick }) => {
-  const initialClasses = classNames(compName, `${compName}--${variant}`);
+  /**
+   *  Construct className string
+   */
+  const classes = classNames(compName, `${compName}--${variant}`);
+
+  /**
+   *  Element ref
+   */
   const ref = useRef();
 
+  /**
+   *  Component update hook
+   *  @description toggling the visibilty of the component
+   */
   useEffect(() => {
     active ? show() : hide();
   });
 
+  /**
+   *  Show method
+   */
   const show = () => {
     defer(() => {
       setOpacity(ref, opacity);
     });
   };
 
+  /**
+   *  Hide method
+   */
   const hide = () => {
     setOpacity(ref);
   };
 
-  return <div className={initialClasses} ref={ref} onClick={onClick} />;
+  /**
+   *  Render
+   */
+  return <div className={classes} ref={ref} onClick={onClick} />;
 };
 
 /**

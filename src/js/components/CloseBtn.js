@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import classNames from 'classnames';
 
 import * as types from './propTypes';
@@ -53,21 +53,13 @@ const defaultProps = {
 };
 
 const Close = ({ variant, pos, posAlign, size, onClick }) => {
-  const initialClasses = classNames(
+  const classes = classNames(
     compName,
     pos !== 'rel' ? `${compName}--${pos} ${compName}--${posAlign}` : '',
     size ? `${compName}--${variant}` : ''
   );
-
-  const ref = useRef();
-
   return (
-    <button
-      type='button'
-      className={initialClasses}
-      ref={ref}
-      onClick={onClick}
-    />
+    <button type='button' className={classes} ref={ref} onClick={onClick} />
   );
 };
 

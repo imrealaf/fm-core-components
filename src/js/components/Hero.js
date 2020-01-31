@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import { removeClass } from '../utils';
+import { removeClass, defer } from '../utils';
 import * as types from './propTypes';
 import Overlay from './Overlay';
 
@@ -101,9 +101,9 @@ const Hero = ({ img, preloadImg, vh, overlay, overlayOpacity, children }) => {
   }, []);
 
   /**
-   *  Class name
+   *  Construct class name
    */
-  const initialClasses = classNames(
+  const classes = classNames(
     compName,
     `${compName}--${img ? 'dark' : variant}`,
     img
@@ -136,7 +136,7 @@ const Hero = ({ img, preloadImg, vh, overlay, overlayOpacity, children }) => {
    *  On image loaded
    */
   const onImageLoad = () => {
-    setTimeout(() => {
+    defer(() => {
       if (ref.current) removeClass(ref, 'has-preload');
     }, 100);
   };
@@ -145,7 +145,7 @@ const Hero = ({ img, preloadImg, vh, overlay, overlayOpacity, children }) => {
    *  Render
    */
   return (
-    <div className={initialClasses} style={styles()} ref={ref}>
+    <div className={classes} style={styles()} ref={ref}>
       {img && overlay ? (
         <Overlay active={true} opacity={overlayOpacity} />
       ) : null}

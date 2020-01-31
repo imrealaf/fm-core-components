@@ -166,8 +166,7 @@ const SlidingPanel = ({
   const ref = useRef();
 
   /**
-   *  componentDidUpdate
-   *  @type hook
+   *  Component update hook
    *  @description fires when the value of active changes, toggling the visibilty of the component
    */
   useEffect(() => {
