@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
@@ -69,7 +69,7 @@ const Burger = ({ type, active, pos, posAlign, onClick }) => {
    *  Render
    */
   return (
-    <div className={classes} ref={ref} onClick={onClick}>
+    <div className={classes} onClick={onClick}>
       <span className={`${compName}__box`}>
         <span className={`${compName}__inner`}></span>
       </span>

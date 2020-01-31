@@ -1,10 +1,10 @@
-export interface UseToggleProps {
+export interface UseToggleAPI {
   active: boolean;
   show(): void;
   hide(): void;
   toggle(): void;
 }
 
-declare type UseToggle = () => UseToggleProps;
+declare type useToggle = () => UseToggleAPI;
 
-export default UseToggle;
+export default useToggle;

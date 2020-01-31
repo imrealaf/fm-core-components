@@ -1,1 +1,1 @@
-export { default as UseToggle, UseToggleProps } from './useToggle';
+export { default as useToggle, UseToggleAPI } from './useToggle';
