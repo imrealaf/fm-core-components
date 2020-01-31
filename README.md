@@ -2,10 +2,11 @@
 
 ### Components
 
-`Overlay`
+`Hero`
 `SlidingPanel`
 `Burger`
 `CloseBtn`
+`Overlay`
 
 ### Hooks
 
