@@ -2,6 +2,7 @@
   padding: $burger-padding-y $burger-padding-x;
   display: inline-block;
   cursor: pointer;
+  transform: scale(-1);
 
   transition-property: opacity, filter;
   transition-duration: 0.15s;
@@ -55,7 +56,7 @@
 
   &.burger--right,
   &.burger--left {
-    top: 3px;
+    top: 0;
   }
 
   &.burger--right {
@@ -78,6 +79,8 @@
   display: block;
   top: 50%;
   margin-top: $burger-layer-height / -2;
+  transform: translateY(2px);
+  width: $burger-layer-width - 5;
 
   &,
   &::before,
@@ -90,6 +93,21 @@
     transition-property: transform;
     transition-duration: 0.15s;
     transition-timing-function: ease;
+  }
+
+  & {
+    width: $burger-layer-width - 5;
+  }
+
+  &::before {
+    width: $burger-layer-width - 10;
+  }
+
+  .active & {
+    &,
+    &::before {
+      width: $burger-layer-width;
+    }
   }
 
   &::before,

@@ -1,0 +1,36 @@
+/**
+ *  Font sizes
+*/
+
+$font-sizes: (
+  'xs': 0.7rem,
+  'sm': 0.8rem,
+  'lg': 1.2rem,
+  'xl': 1.4rem
+);
+
+@each $size in map-keys($font-sizes) {
+  &.fs--#{$size} {
+    font-size: map-get($font-sizes, $size);
+  }
+}
+
+/**
+ *  Font weight
+*/
+
+.f--light {
+  font-weight: 300;
+}
+
+.f--bold {
+  font-weight: 700;
+}
+
+/**
+ *  Typography
+*/
+
+.lh--1 {
+  line-height: 1;
+}

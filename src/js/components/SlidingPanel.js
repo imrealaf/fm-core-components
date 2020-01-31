@@ -195,6 +195,7 @@ const SlidingPanel = ({
 
     // Trigger on shown when transition ends
     onTransitionEnd(ref, () => {
+      document.body.style.overflow = 'hidden';
       if (onShown) onShown();
     });
   };
@@ -217,6 +218,7 @@ const SlidingPanel = ({
       // Hide overlay & display of element
       removeClass(ref, DOM_STATE.ACTIVE);
       setShowOverlay(false);
+      document.body.style.overflow = '';
 
       // Trigger on hidden
       if (onHidden) onHidden();

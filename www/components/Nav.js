@@ -10,9 +10,9 @@ const Nav = () => {
   return (
     <Fragment>
       <Burger pos='abs' active={panel.active} onClick={panel.toggle} />
-      <nav className='navbar navbar-light bg-light'>
-        <Link className='navbar-brand' to='/'>
-          <strong>FM</strong> Core Components
+      <nav className='navbar navbar-dark' style={{ background: 'black' }}>
+        <Link className='navbar-brand mx-auto font--accent' to='/'>
+          <strong>FM</strong> <span className='f--light'>Core Components</span>
         </Link>
       </nav>
       <SlidingPanel

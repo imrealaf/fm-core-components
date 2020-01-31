@@ -34,7 +34,7 @@ $gray-darkest: #111;
 $variant-light-bg: $gray-lightest;
 $variant-light-color: $gray-darkest;
 
-$variant-dark-bg: $gray-darker;
+$variant-dark-bg: $gray-darkest;
 $variant-dark-color: $gray-lightest;
 
 $variants: ('light', 'dark');
@@ -56,7 +56,7 @@ $variant-color: (
 
 $variant-shadow-opacity: (
   'light': 0.2,
-  'dark': 0.3
+  'dark': 0.4
 );
 
 /**
@@ -95,7 +95,7 @@ $sliding-panel-offsets: (
 $burger-padding-x: $gutter/2;
 $burger-padding-y: $gutter/2;
 $burger-layer-width: $gutter;
-$burger-layer-height: 2px;
+$burger-layer-height: 1px;
 $burger-layer-spacing: 7px;
 $burger-layer-color: $accent;
 $burger-layer-border-radius: 0;

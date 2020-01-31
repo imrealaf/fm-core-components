@@ -1,0 +1,40 @@
+.hero {
+  display: flex;
+  padding: 6rem 0;
+  position: relative;
+
+  .hero__content {
+    width: 100%;
+    position: relative;
+    z-index: 10;
+  }
+
+  .overlay {
+    position: absolute;
+    z-index: 1;
+  }
+
+  @each $variant in $variants {
+    &.hero--#{$variant} {
+      color: map-get($variant-color, $variant);
+    }
+  }
+
+  &.has-img {
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  &.has-vh {
+    padding: 3rem 0;
+    display: flex;
+    align-items: center;
+  }
+
+  &.has-preload {
+    .overlay {
+      opacity: 1 !important;
+    }
+  }
+}

@@ -9,3 +9,5 @@ export const CSSPositionPropType = PropTypes.oneOf(['rel', 'abs', 'fxd']);
 export const PositionPropType = PropTypes.oneOf(['left', 'right']);
 
 export const AlignmentPropType = PropTypes.oneOf(['left', 'center', 'right']);
+
+export const ViewHeightPropType = PropTypes.oneOf([25, 50, 75, 100]);
